@@ -1,4 +1,3 @@
-module StaticPagesHelper
 
 	def full_title(page_title)
 		base_title = "Sample RoR Pastebin"
@@ -8,5 +7,3 @@ module StaticPagesHelper
 		 	"#{base_title} | #{page_title}"
 		end
 	end
-
-end
