@@ -1,0 +1,132 @@
+@import "font-awesome";
+@import "bootstrap";
+
+
+ body {  
+        padding-top: 60px;  
+        padding-bottom: 40px;  
+         background-image: url(test3.png);
+   background-repeat:repeat;  
+      }  
+      .nav li {  
+      padding-top: 5px;  
+      
+      }  
+
+     ul.pull-right {
+
+      padding-right: 30px;
+      color: #000;
+      }
+        
+      .sidebar-nav {  
+        padding: 9px 0;  
+      }  
+      
+  
+ 
+
+#logo {
+  float:left;
+  padding-top:12px;
+  padding-left:17px;
+  font-size: 1.7em;
+  color:#505050 ;
+  font-family: serif;
+  letter-spacing: 0.5px;
+  font-weight: bolder; 
+  text-shadow: 0px 0px 20px #ccc;
+  &:hover {
+   color:#5E0320;
+   text-decoration:none;
+   text-shadow: 0px 0px 20px #ccc;
+   }
+
+}
+
+.img-logo {
+  
+  float:left;
+    padding-top: 12px;
+  color: #5E0320 ;
+  &:hover {
+     
+     text-decoration: none;
+     color: #5E0320;
+  }
+
+  
+}
+
+
+/* Main Page stuff */
+
+.contenter {
+  margin-top: 20px;
+  -moz-opacity: 0.9;
+  -webkit-opacity: 0.9;
+  opacity:0.9;
+  filter: alpha(opacity=90);
+}
+
+.center {
+  text-align: center;
+
+.center h1 {
+  margin-bottom: 10px;
+ }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.4em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+
+/* Fix hero-unit h1 class */
+.hero-unit {
+
+  h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #5E0320 ;
+  }  
+ }
+
+ /* footer */
+
+
+
+#footer {position: relative;
+  margin-top:50px;
+  height: 50px;
+  clear:both;
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); 
+  border-radius: 6px;
+ -webkit-box-shadow: 0px 2px 20px #ccc;
+  } 
+

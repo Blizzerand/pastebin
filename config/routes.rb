@@ -1,9 +1,16 @@
 Pastebin::Application.routes.draw do
 
+#Site resources
+  resources :pages
+
+#StaticPages
   root to: 'static_pages#home'
   match '/help', to: 'static_pages#help'
   match '/about', to: 'static_pages#about'
 
+#Pages 
+
+match '/pasteit', to: 'pages#new'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

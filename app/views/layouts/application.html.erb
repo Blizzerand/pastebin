@@ -5,10 +5,45 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<!--[if lt IE 8]>
+    <%= stylesheet_link_tag "font-awesome-ie7.min.css", media: "all" %>
+    <![endif]-->
+
 </head>
 <body>
+  <header> 
+  	<div class="navbar navbar-fixed-top">  
+      <div class="navbar-inner">  
+        <div class="container-fluid">  
+           
+      
+     <%= link_to "", root_path, class: "icon-puzzle-piece icon-2x img-logo" %>
+      <%=  link_to "Pastebin", root_path, id: 'logo'  %>
 
-<%= yield %>
+  		
+  		
+  			<ul class="nav pull-right">
+  				<% @navigation_links.each do |key, value| %>
+  				<li> <%= link_to key, value %></li>
+  				<% end %> 
+  			</ul>
+  		</nav>
+  		</div>
+  	</div>
+  </div>
+  	<div class="container">
+      <div class="center hero-unit contenter">
+		    <%= yield %>	
+	</div>
+  
+  <footer id="footer">
+    Hi
 
+  </footer>
+  </div>	
 </body>
 </html>
