@@ -1,0 +1,18 @@
+  <header> 
+  	<div class="navbar navbar-fixed-top">  
+      <div class="navbar-inner">  
+        <div class="container-fluid">  
+           
+          <%= link_to "", root_path, class: "icon-puzzle-piece icon-2x img-logo" %>
+          <%=  link_to "Pastebin", root_path, id: 'logo'  %>
+
+      	  <ul class="nav pull-right">
+  				  <% @navigation_links.each do |key, value| %>
+  				    <li> <%= link_to key, value %></li>
+  				  <% end %> 
+  			  </ul>
+  		 
+  		  </div>
+  	  </div>
+    </div>
+  </header>

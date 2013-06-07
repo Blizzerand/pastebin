@@ -6,48 +6,18 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
-<!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-<!--[if lt IE 8]>
-    <%= stylesheet_link_tag "font-awesome-ie7.min.css", media: "all" %>
-    <![endif]-->
+<%= render 'layouts/shim' %>
 
 </head>
 <body>
-  <header> 
-  	<div class="navbar navbar-fixed-top">  
-      <div class="navbar-inner">  
-        <div class="container-fluid">  
-           
-      
-     <%= link_to "", root_path, class: "icon-puzzle-piece icon-2x img-logo" %>
-      <%=  link_to "Pastebin", root_path, id: 'logo'  %>
-
-  		
-  		
-  			<ul class="nav pull-right">
-  				<% @navigation_links.each do |key, value| %>
-  				<li> <%= link_to key, value %></li>
-  				<% end %> 
-  			</ul>
-  		</nav>
-  		</div>
-  	</div>
-  </div>
+ <%= render 'layouts/header' %>
   	<div class="container">
-      <div class="center hero-unit contenter">
+      <div class="hero-unit contenter">
 		    <%= yield %>	
-	</div>
+	   </div>
 
-  <footer id="footer">
-    <div class="footnote-left">
-      [pastebin(master)]$ <span class="dark-text">Developed by Chris Howart ...</span>
-    </div>
-    <div class="footnote-right">
-   Proudly Powered by <%= link_to 'Rails', 'http://rubyonrails.org/', class: 'dark-text' %>   </div> 
-
-  </footer>
-  </div>	
+        <%= render 'layouts/footer' %>
+        <%= debug(params) if Rails.env.development? %>
+    </div>	
 </body>
 </html>
