@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-
+gem 'font-awesome-rails', '~> 3.1.1.3'
 
 group :development do
   gem 'annotate', '2.5.0'
@@ -24,7 +24,7 @@ group :assets do
   gem 'sass-rails',   '3.2.5'
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'
-  gem 'font-awesome-rails', '~> 3.1.1.3'
+  
   
 
 
