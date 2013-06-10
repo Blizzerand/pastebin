@@ -7,12 +7,13 @@
 <div class="show-content"><%= simple_format(@page.content) %></div>
 </div>
 <div class="step-down">
-<p class="step-down-left"> Posted by <span class=" dark-text"> <%= user_name(@page.name) %> </span></p>
+<p class="step-down-left"> Posted by <span class="dark-text"> <%= user_name(@page.name) %> </span></p>
 <div class="step-down-right"> 
 <ul>
 <li> <%= link_to "Paste Another", pasteit_path, class: "dark-text text-align" %> <i class="icon-chevron-sign-right icon-2x"></i> </li>
 <li> <%= link_to "Edit", edit_page_path(@page.url_hash), class: "dark-text text-align" %> <i class="icon-edit-sign icon-2x"></i>  </li>
-<li> <%= link_to "Destroy", edit_page_path(@page.url_hash), class: "dark-text text-align" %> <i class="icon-remove icon-2x"></i>  </li>
+<li> <%= link_to "Delete", page_path(@page.url_hash),  method: :delete,
+                                  data: { confirm: "You sure?" }, class: "dark-text text-align" %> <i class="icon-remove icon-2x"></i>  </li>
  <li><% if @count>0 %> <%= link_to "My pastes", pages_path, class: "dark-text text-align" %> <i class="icon-reorder icon-2x"></i> <% end %></li></ul>
 
 </div>

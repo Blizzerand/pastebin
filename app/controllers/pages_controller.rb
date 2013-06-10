@@ -14,6 +14,9 @@ class PagesController < ApplicationController
   def index
     @page = Page.find_all_by_remember_token(cookies[:remember_token]).reverse
     @page_public = Page.last(25).reverse
+    @count = Page.find_all_by_remember_token(cookies[:remember_token]).length
+
+
   end
 
   def show
@@ -45,6 +48,15 @@ class PagesController < ApplicationController
   	@page = Page.new
   end
 
-
+  def destroy
+    @page = Page.find_by_url_hash(params[:id])
+    if cookies[:remember_token] == @page.remember_token
+      @page.destroy
+      flash[:success] = "Page Deleted"
+      redirect_to pages_path
+    else
+      flash[:error] = "This Page doesn't belong to you! :P"
+    end
+  end
 
 end

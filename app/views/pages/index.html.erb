@@ -1,20 +1,28 @@
 <% provide(:title, "Recent Pastes") %>
 <h1>Recent Pastes</h1>
 <br>
+
 <div class="row">
+
 	<div class="span6 offset0">
 		<table class="table table-striped tabledividerright ">
 			<thead>  
           	<h2> Your recent Pastes </h2>
             </thead>
             <tbody>  
-          <tr> <% @page.each do |page| %> 
+            	
+          <tr><% if @count!=0 %> 
+          	<% @page.each do |page| %> 
             <td class="dark-text"><%= page.title %></td>  
             <td><%= link_to "View", page_path(page.url_hash), class: "light-text" %></td>  
             <td><%= link_to "Edit", edit_page_path(page.url_hash), class: "light-text" %></td>  
-            <td><%= link_to "Delete", '#', class: "light-text" %></td>  
+            <td><%= link_to "Delete", page_path(page.url_hash),  method: :delete,
+                                  data: { confirm: "You sure?" } , class: "light-text" %></td>  
                
           </tr> 
+          <% end %>
+          <% else %>
+          <p class="light-text"> You don't have any pastes yet! </p>
           <% end %>
         </table>
 	</div>
@@ -23,7 +31,7 @@
    <div class="span4">
 	<table class="table table-striped tabledividerleft">
 			<thead>  
-          	<h2> Recent Pastes </h2>
+          	<h2> All Pastes </h2>
             </thead>
             <tbody>  
           <tr> <% @page_public.each do |page|  %> 
@@ -36,5 +44,8 @@
       </tbody>
 	</table>
    </div>
-	
-</div>	
+   </div>
+   <div class="row">	
+   
+<%= link_to "Paste Another", pasteit_path, class: "dark-text text-align" %> <i class="icon-chevron-sign-right icon-2x"></i> 
+</div>
