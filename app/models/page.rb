@@ -18,6 +18,8 @@ class Page < ActiveRecord::Base
   validates :content, presence: true
 
   before_create :create_url_hash
+  before_create :create_remember_token
+
 
   	private
   		def create_url_hash
@@ -34,5 +36,12 @@ class Page < ActiveRecord::Base
  			self.url_hash = string 
  			end
  		end
+
+
+ 		def create_remember_token
+
+ 			self.remember_token = SecureRandom.urlsafe_base64
+		end
+ 	
 
 end

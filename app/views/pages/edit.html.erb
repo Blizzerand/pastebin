@@ -1,2 +1,22 @@
-<h1>Pages#edit</h1>
-<p>Find me in app/views/pages/edit.html.erb</p>
+<% provide(:title, "Edit #{@page.title}!") %>
+<h1><%= "Edit #{@page.title}!" %> </h1>
+<h2> Your session would expire in 1 hour. </h2>
+
+<div class="row">
+  <div class="span8 offset0 ">
+  	<%= form_for(@page) do |f| %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      
+      <%= f.label :content %>
+      <%= f.text_area :content, class: "text-field" %>
+
+  	  <%= f.label :name, "Name(Optional)" %>
+  	  <%= f.text_field :name  %>
+
+  	  <%= f.submit "Update", class: 'btn btn-primary btn-large center' %>
+
+  	<% end %>
+ </div>
+</div>

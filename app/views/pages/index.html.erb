@@ -1,2 +1,40 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<% provide(:title, "Recent Pastes") %>
+<h1>Recent Pastes</h1>
+<br>
+<div class="row">
+	<div class="span6 offset0">
+		<table class="table table-striped tabledividerright ">
+			<thead>  
+          	<h2> Your recent Pastes </h2>
+            </thead>
+            <tbody>  
+          <tr> <% @page.each do |page| %> 
+            <td class="dark-text"><%= page.title %></td>  
+            <td><%= link_to "View", page_path(page.url_hash), class: "light-text" %></td>  
+            <td><%= link_to "Edit", edit_page_path(page.url_hash), class: "light-text" %></td>  
+            <td><%= link_to "Delete", '#', class: "light-text" %></td>  
+               
+          </tr> 
+          <% end %>
+        </table>
+	</div>
+	
+   <div class="span1"></div>
+   <div class="span4">
+	<table class="table table-striped tabledividerleft">
+			<thead>  
+          	<h2> Recent Pastes </h2>
+            </thead>
+            <tbody>  
+          <tr> <% @page_public.each do |page|  %> 
+          	<td class="dark-text"><%= page.title %></td>
+          	<td><%= link_to "View", page_path(page.url_hash), class: "light-text" %></td>  
+            
+               
+          </tr> 
+          <% end %>
+      </tbody>
+	</table>
+   </div>
+	
+</div>	
