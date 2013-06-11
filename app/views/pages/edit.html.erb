@@ -6,6 +6,8 @@
   <div class="span8 offset0 ">
   	<%= form_for(@page) do |f| %>
 
+      <%= render 'shared/errors' %>
+
       <%= f.label :title %>
       <%= f.text_field :title %>
       

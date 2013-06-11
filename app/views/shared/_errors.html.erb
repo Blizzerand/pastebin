@@ -1,0 +1,13 @@
+<% if @page.errors.any? %>
+	<div id="error-explanation">
+		<div class="alert alert-error">
+		This paste contains <%= pluralize(@page.errors.count, "error") %>.
+	</div>
+	<ul>
+  		<% @page.errors.full_messages.each do |error| %>
+		<li> <%= error %> </li>
+	<% end %>
+	</ul>
+		
+	</div>
+<% end %>

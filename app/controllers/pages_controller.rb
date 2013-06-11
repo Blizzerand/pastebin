@@ -3,12 +3,13 @@ class PagesController < ApplicationController
   def create
   	@page = Page.new(params[:page])
 	  
-  if @page.save
-    cookies_handler    
-    redirect_to page_path(@page.url_hash)
-    	else
-	  render 'new'  
-	end
+    if @page.save
+      cookies_handler    
+      redirect_to page_path(@page.url_hash)
+      flash[:success] = "New paste Created!"
+    else
+      render 'new'  
+	  end
   end
 
   def index
@@ -28,6 +29,7 @@ class PagesController < ApplicationController
   def edit
     @page = Page.find_by_url_hash(params[:id])
     if cookies[:remember_token] != @page.remember_token
+       flash[:error] = "This paste doesn't belong to you ;)"
        redirect_to page_path(@page.url_hash)
     end
     
@@ -38,6 +40,7 @@ class PagesController < ApplicationController
     if @page.update_attributes(params[:page])
        cookies[:remember_token] = { value: @page.remember_token, expires: 1.hour.from_now.utc }
       redirect_to page_path(@page.url_hash)
+      flash[:success] = "Your paste has been updated!"
     else
       render 'edit'
     end
@@ -52,10 +55,11 @@ class PagesController < ApplicationController
     @page = Page.find_by_url_hash(params[:id])
     if cookies[:remember_token] == @page.remember_token
       @page.destroy
-      flash[:success] = "Page Deleted"
+      flash[:success] = "Page Deleted!"
       redirect_to pages_path
     else
       flash[:error] = "This Page doesn't belong to you! :P"
+      redirect_to page_path(@page.url_hash)
     end
   end
 
