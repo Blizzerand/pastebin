@@ -14,7 +14,7 @@ class Page < ActiveRecord::Base
   attr_accessible :content, :name, :title
 
   
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 30 }
   validates :content, presence: true
 
   before_create :create_url_hash
