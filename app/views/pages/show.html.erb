@@ -4,7 +4,7 @@
 <h1><%= @page.title %></h1>
 <div class="show-text">
 <div class="perm-url">  Permanent URI: <%= @current_page_url %></div>
-<div class="show-content"><%= simple_format(@page.content) %></div>
+<div class="show-content"><%= simple_format(@page.content, {}, :sanitize => false) %></div>
 </div>
 <div class="step-down">
 <p class="step-down-left"> Posted by <span class="dark-text"> <%= user_name(@page.name) %> </span></p>
