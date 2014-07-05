@@ -6,7 +6,7 @@ programming background, my web development skills were terrible. I knew a bit
 of HTML and CSS, but if you had asked me what POST and PUT had in common, I
 would have told you they both started with a P and ended with a T. An author
 suggested that mastering Rails required bacheloring all aspects of web
-development, but the idea of learning everything from scratch did not excite
+development, but the idea of learning everything from **scratch** did not excite
 me. Then, a few days later, I stumbled upon some Ruby syntax on a Pastebin
 application online. I had no experience with Ruby, whatsoever, but its syntax
 and style were so elegant and expressive that I could easily perceive what the
